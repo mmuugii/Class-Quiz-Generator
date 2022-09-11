@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Code Knowledge</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <!-- Below is the button for starting the quiz. -->
+    <div class="startButton">
+        <button>Start</button>
+    </div>
+    <!--Section where we have our rules.-->
+    <div class="rules">
+        <h2>Rules</h2>
+        <ol class="list">
+            <li class="listItem">You must answer each question within 10 seconds.</li>
+            <li class="listItem">Every correct answer will get you 1 point.</li>
+            <li class="listItem">Once you begin quiz, you cannot exit.</li>
+        </ol>
+        <!-- This is where the two buttons lie to either start quiz or quit the quiz. -->
+        <div class="endButtons">
+            <button class="continue">Continue</button>
+            <button class="quit">Quit</button>
+        </div>
+    </div>
+    <!--Section where our quiz will appear once JS is activated-->
+    <div class="quiz-box"> 
+        <header>
+            <div class="title">Code Knowledge Quiz</div>
+            <div class="timer">
+                <div class="timer-left-text">Time Left</div>
+                <div class="timer-sec">10</div>
+            </div>
+            <div class="time-line"></div>
+        </header>
+        <section>
+            <div class="que-text"></div>
+        </section>
+        <footer>
+            <div class="total-que"></div>
+            <button class="nextButton">Next</button>
+        </footer>
+    </div>
+    <!--Where results will live-->
+    <div class="results-box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="completed-text">Congrats, you completed the quiz!</div>
+        <div class="score-box"></div>
+        <div class="endButtons">
+            <button class="continue">Replay</button>
+            <button class="quit">Quit</button>
+        </div>
+    </div>
+</body>
+</html>
