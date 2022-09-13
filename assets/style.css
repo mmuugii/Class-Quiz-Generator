@@ -4,12 +4,13 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h2 {
-    text-align: center;
-}
-
 body {
     background-color: aqua;
+}
+
+::selection {
+    color: white;
+    background: aqua;
 }
 
 .startButton,
@@ -24,6 +25,15 @@ body {
                 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.rules.activeInfo,
+.quiz-box.activeQuiz,
+.results-box.activeResult {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -30%) scale(1);
+}
+
 .startButton button {
     border-radius: 5px;
     font-size: 15px;
@@ -32,6 +42,8 @@ body {
     font-weight: 300;
     padding: 15px 30px;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .rules {
@@ -42,6 +54,17 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+.rules-title {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    border-bottom: 1.2px solid lightgray;
 }
 
 .rules .list {
@@ -59,6 +82,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
+    border-top: 1.2px solid lightgray;
 }
 
 .rules .endButtons button {
@@ -79,6 +103,10 @@ body {
     border-radius: 7px;
     opacity: 0;
     pointer-events: none;
+    transform: translate(-50%, -30%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 .quiz-box header {
@@ -91,6 +119,7 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 7px 7px 0 0;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 1);
 }
 
 .quiz-box header .title {
@@ -121,6 +150,14 @@ body {
     text-align: center;
     line-height: 30px;
     user-select: none;
+}
+
+.quiz-box header .time-line {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: aqua;
 }
 
 section {
@@ -157,7 +194,23 @@ section .option-list .option:last-child {
 section .option-list .option:hover {
     background: lightgray;
     color: black;
-    border-color: lightgray;
+    border: 1px solid lightgray;
+}
+
+section .option-list .option.correct {
+    border: 1px solid #c3e6cb;
+    background: #d4edda;
+    color: #155724;
+}
+
+section .option-list .option.incorrect {
+    border: 1px solid #f5c6cb;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+section .option-list .option.disabled {
+    pointer-events: none;
 }
 
 section .option-list .option .icon {
@@ -206,7 +259,7 @@ footer .total-que span p:first-child {
     padding-left: 0px;
 }
 
-footer .nextButton {
+footer button {
     height: 35px;
     padding: 0 15px;
     font-size: 15px;
@@ -224,8 +277,14 @@ footer .nextButton {
     outline: none;
 }
 
-footer .nextButton:hover {
+footer button:hover {
     background: cyan;
+}
+
+footer button.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
 }
 
 .results-box {

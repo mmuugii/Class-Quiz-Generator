@@ -1,4 +1,4 @@
-var question = [
+let questions = [
     {
     numb: 1,
     question: "Commonly used data types do NOT include...",
