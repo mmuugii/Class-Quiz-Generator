@@ -19,7 +19,7 @@ https://mmuugii.github.io/Class-Quiz-Generator/
 
 ## Screenshot of Website
 
-![alt="Screenshot of deployed website"](./assets/images/_Users_muugiim_Documents_bootcamp_homework_02-Portfolio_index.html%20(1).png)
+![alt="Screenshot of deployed website"](./assets/Screenschot/Screen%20Shot.png)
 
 ## Credits
 
