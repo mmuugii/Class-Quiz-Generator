@@ -16,7 +16,7 @@ body {
 .startButton,
 .rules,
 .quiz-box,
-.results-box {
+.result-box {
     position: absolute;
     left: 50%;
     top: 30%;
@@ -27,7 +27,7 @@ body {
 
 .rules.activeInfo,
 .quiz-box.activeQuiz,
-.results-box.activeResult {
+.result-box.activeResult {
     opacity: 1;
     z-index: 5;
     pointer-events: auto;
@@ -287,7 +287,7 @@ footer button.show {
     transform: scale(1);
 }
 
-.results-box {
+.result-box {
     background: white;
     border-radius: 7px;
     display: flex;
@@ -302,32 +302,32 @@ footer button.show {
     transition: all 0.3s ease;
 }
 
-.results-box .icon {
+.result-box .icon {
     font-size: 110px;
     color: gold;
     margin-bottom: 10px;
 }
 
-.results-box .completed-text {
+.result-box .completed-text {
     font-size: 23px;
 }
 
-.results-box .score-box span {
+.result-box .score-box span {
     display: flex;
     font-size: 18px;
     margin: 10px 0;
 }
 
-.results-box .score-box span p {
+.result-box .score-box span p {
     padding: 0 5px;
 }
 
-.results-box .endButtons {
+.result-box .endButtons {
     display: flex;
     margin: 20px 0;
 }
 
-.results-box .endButtons button {
+.result-box .endButtons button {
     border: none;
     outline: none;
     border-radius: 7px;
@@ -356,4 +356,25 @@ footer button.show {
 .endButtons button.quit:hover {
     color: white;
     background: aqua;
+}
+
+#msg {
+    visibility: hidden;
+    margin-top: 20px;
+    font-weight: 700;
+    height: 1.2em;
+    font-size: 1.2em;
+}
+
+#msg.success,
+#msg.error {
+    visibility: visible;
+}
+
+#msg.success {
+    color: #001b44;;
+}
+
+#msg.error {
+    color: #e6252c;
 }
