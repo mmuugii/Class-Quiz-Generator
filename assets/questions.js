@@ -49,7 +49,7 @@ let questions = [
         answer: "consoleLog",
         options: [
             "consoleLog",
-            "termina;/bash",
+            "terminal/bash",
             "javascript",
             "for loops"
         ]
