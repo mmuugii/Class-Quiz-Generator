@@ -60,6 +60,10 @@ restart_quiz.onclick = ()=> {
 quit_quiz.onclick = ()=> {
     window.location.reload(); 
 }
+// if restart quiz button is clicked
+restart_quiz.onclick = ()=> {
+    window.location.reload();
+}
 const next_btn = document.querySelector("footer .nextButton");
 const bottom_ques_counter = document.querySelector("footer .total-que");
 // if Next Que button clicked
@@ -172,17 +176,18 @@ function showResult() {
     const scoreText = result_box.querySelector(".score-box");
     if (userScore > 3){ 
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats! , You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Congrats! You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  
     }
     else if(userScore > 1) { 
-        let scoreTag = '<span>and nice , You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Nice, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else { // 
-        let scoreTag = '<span>and sorry , You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Sorry, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
+
 }
 
 function startTimer(time) {
@@ -233,3 +238,11 @@ function startTimerLine(time) {
 // function endQuiz() {
 //     alert("End of Quiz!");
 // }
+
+var saveButton = document.getElementById('save');
+var userName = document.getElementById('name');
+
+saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    localStorage.setItem("User-Name", userScore);
+});
